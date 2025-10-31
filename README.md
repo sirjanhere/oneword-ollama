@@ -137,7 +137,7 @@ After successful test output:
 |---------------------------------------:|---------------------------------------------------------------------|
 | fetch request blocked by CORS          | Ensure `$env:OLLAMA_ORIGINS="*"` is set before running `ollama serve`. |
 | Could not connect to 0.0.0.0:11434     | Restart Ollama using `taskkill /F /IM ollama.exe /T` and rerun `ollama serve`. |
-| Model not found                         | Run `ollama pull oneword` again to ensure it’s available locally.   |
+| Model not found                         | Recreate it using ollama create oneword -f Modelfile. Make sure your Modelfile and base model exist.   |
 | Error: connection refused               | Make sure Ollama is still running in your terminal window.         |
 
 ✅ Example Output
