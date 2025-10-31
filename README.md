@@ -1,4 +1,4 @@
-# Ollama API Test — OneWord Model
+# Ollama API Test - OneWord Model
 
 This project demonstrates how to run a custom Ollama model locally and test it using a simple JavaScript fetch request. The setup ensures the Ollama server runs on your local machine and accepts requests from web origins such as browser consoles or grading platforms.
 
@@ -20,7 +20,10 @@ This project demonstrates how to run a custom Ollama model locally and test it u
 
 1. Pull the Required Model
 
-   Before running the server, download the required model:
+   Before creating the local model, download the base model referenced in the Modelfile:
+   Run ollama pull model_name (e.g., ollama pull llama3) to download the base model referenced in your Modelfile before running ollama create oneword -f Modelfile.
+  
+   Then register the Modelfile as a local model named `oneword`:
 
    ```bash
    ollama create oneword -f Modelfile
@@ -60,7 +63,7 @@ This project demonstrates how to run a custom Ollama model locally and test it u
    ```
    ✅ Yes — running `ollama create oneword -f Modelfile` was necessary for the graded assignment that uses the custom `oneword` model.
 
-2. Allow All Origins (for Grader Console Access)
+1. Allow All Origins (for Grader Console Access)
 
    In PowerShell, run the following command to allow requests from any browser origin for the current session:
 
@@ -70,7 +73,7 @@ This project demonstrates how to run a custom Ollama model locally and test it u
 
    Note: This sets the environment variable temporarily for the current PowerShell session. If you restart the terminal you'll need to set it again.
 
-3. Start the Ollama Server
+2. Start the Ollama Server
 
    Once the variable is set, start the Ollama API server:
 
@@ -84,7 +87,7 @@ This project demonstrates how to run a custom Ollama model locally and test it u
    http://localhost:11434
    ```
 
-4. Verify the Server
+3. Verify the Server
 
    Check if Ollama is responding:
 
